@@ -14,5 +14,5 @@ Winner Game::CheckWinner()
 
 void Game::Deal()
 {
-
+ std::cout << "dealing\n";
 }

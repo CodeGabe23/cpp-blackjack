@@ -9,4 +9,4 @@ public:
 	void Deal();
 
 	Winner CheckWinner();
-}
+};
