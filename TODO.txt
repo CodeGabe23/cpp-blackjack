@@ -1,0 +1,23 @@
+structure:
+1. game class
+	- Deal()
+	- CheckWinner()
+
+2. player class
+	- Hit()
+	- Stand()
+	- PresentOptions()
+
+main game loop flow:
+- init game
+- Deal
+- Present Options:
+	Allow player to either Hit or Stand
+	if Hit:
+		Increment the players value by 1-10 randomly.
+		if its more than 21:
+			player loses
+		if value equal to 21:
+			go to dealers turn
+		else:
+			present options again
