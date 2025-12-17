@@ -24,6 +24,7 @@ Blackjack: /usr/lib/Scrt1.o \
 
 CMakeFiles/Blackjack.dir/game.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/game.cpp \
   /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/game.hpp \
+  /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/player.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -211,6 +212,7 @@ CMakeFiles/Blackjack.dir/game.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/cp
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/raylib.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
@@ -619,6 +621,7 @@ CMakeFiles/Blackjack.dir/player.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/
   /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
+  /usr/include/raylib.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
@@ -636,8 +639,6 @@ CMakeFiles/Blackjack.dir/player.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/
 
 /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/player.cpp:
 
-/usr/include/raylib.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
 
 /usr/include/sys/single_threaded.h:
@@ -647,6 +648,8 @@ CMakeFiles/Blackjack.dir/player.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/
 /usr/include/stdio.h:
 
 /usr/include/sched.h:
+
+/usr/include/raylib.h:
 
 /usr/include/pthread.h:
 
@@ -812,12 +815,6 @@ CMakeFiles/Blackjack.dir/player.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/
 
 /usr/include/bits/uintn-identity.h:
 
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
-
-/usr/include/bits/stdlib-float.h:
-
-/usr/include/bits/time64.h:
-
 /usr/include/asm/posix_types.h:
 
 /usr/include/asm/posix_types_64.h:
@@ -832,6 +829,12 @@ CMakeFiles/Blackjack.dir/player.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/
 
 /usr/include/bits/types/clockid_t.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
+
+/usr/include/c++/15.2.1/bits/move.h:
+
 /usr/include/c++/15.2.1/type_traits:
 
 /usr/include/c++/15.2.1/debug/debug.h:
@@ -841,8 +844,6 @@ CMakeFiles/Blackjack.dir/player.cpp.o: /home/gabriel/Desktop/cppProjects/raylib/
 /usr/include/bits/types.h:
 
 /usr/lib/libc.so.6:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
 
 /usr/lib/crtn.o:
 
@@ -936,11 +937,11 @@ CMakeFiles/Blackjack.dir/player.cpp.o:
 
 /usr/lib/libm.so:
 
-/home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/player.hpp:
-
 /usr/include/wctype.h:
 
 /usr/include/bits/errno.h:
+
+/home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/player.hpp:
 
 /usr/include/bits/timex.h:
 
@@ -948,7 +949,17 @@ CMakeFiles/Blackjack.dir/player.cpp.o:
 
 CMakeFiles/Blackjack.dir/main.cpp.o:
 
+/usr/include/c++/15.2.1/bits/ostream.h:
+
+/usr/include/alloca.h:
+
 /usr/include/asm-generic/int-ll64.h:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/bits/time64.h:
 
 /usr/include/bits/types/__fpos64_t.h:
 
@@ -1077,11 +1088,3 @@ CMakeFiles/Blackjack.dir/main.cpp.o:
 /usr/include/bits/types/wint_t.h:
 
 /usr/include/c++/15.2.1/bits/memoryfwd.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
-
-/usr/include/c++/15.2.1/bits/move.h:
-
-/usr/include/alloca.h:
-
-/usr/include/c++/15.2.1/bits/ostream.h:

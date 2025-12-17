@@ -7,6 +7,10 @@ class Game
 public:
 	Game();
 
+	int GetDealerTotalCards();
+
+	void SetDealerTotalCards();
+
 	void Deal();
 
 	Winner CheckWinner();
@@ -15,4 +19,8 @@ public:
 private:
 	Winner winner{NONE};
 	GameState gameState{START};
+
+// Dealer data will be set here
+	int dealerTotalCards {};
+
 };

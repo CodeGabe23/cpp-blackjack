@@ -26,6 +26,7 @@ Blackjack
 CMakeFiles/Blackjack.dir/game.cpp.o
  /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/game.cpp
  /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/game.hpp
+ /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/player.hpp
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
  /usr/include/asm-generic/errno-base.h
@@ -213,6 +214,7 @@ CMakeFiles/Blackjack.dir/game.cpp.o
  /usr/include/linux/types.h
  /usr/include/locale.h
  /usr/include/pthread.h
+ /usr/include/raylib.h
  /usr/include/sched.h
  /usr/include/stdc-predef.h
  /usr/include/stdio.h
@@ -623,6 +625,7 @@ CMakeFiles/Blackjack.dir/player.cpp.o
  /usr/include/linux/types.h
  /usr/include/locale.h
  /usr/include/pthread.h
+ /usr/include/raylib.h
  /usr/include/sched.h
  /usr/include/stdc-predef.h
  /usr/include/stdio.h

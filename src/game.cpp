@@ -1,20 +1,28 @@
 #include "game.hpp"
+#include "player.hpp"
 #include <iostream>
+#include <raylib.h>
 
 Game::Game()
 {
+	// not working yet
+	// need to reset all values to default
  	std::cout << "init game\n";
 }
 
 Winner Game::CheckWinner()
 {
-	std::cout << "Checking winner\n";
-	return Winner::DEALER;
+	// no functionality yet
+	return Winner::NONE;
 }
 
 GameState Game::CheckGameState() {return gameState;}
 
 void Game::Deal()
 {
- std::cout << "dealing\n";
+	//change gamestate to PLAYING
+	gameState = PLAYING;
+
+	// produce random starting numbers for the player and the DEALER
+	//	player.SetTotalCards(GetRandomValue(1,11));
 }

@@ -25,7 +25,10 @@ int main()
 
 	// for rectangle button bounds
 	Rectangle dealBounds = {SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 2, 161, 47};
-	
+	Rectangle hitBounds = {SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3, 165, 55};
+	Rectangle standBounds = {SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3,167, 53};
+
+	SetTargetFPS(60);
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
@@ -37,6 +40,7 @@ int main()
 		//Draw Dealer stats (current number)
 		
 		//Draw Player stats (current number and bet)
+		DrawText(TextFormat("Player Cards: %d", player.GetTotalCards()), SCREEN_WIDTH - 250, SCREEN_HEIGHT - 100, 28, YELLOW);
 
 		//Check gamestate
 		//check where mouse cursor is
@@ -52,9 +56,10 @@ int main()
 				if (CheckCollisionPointRec(mouseCursorPoint, dealBounds))
 				{
 					// if mouse is clicking deal button
-					if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+					if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 					{
 						std::cout << "CLICKING DEAL BUTTON\n";
+						game.Deal();
 					}
 				}
 				// check if the user click the texture
@@ -62,7 +67,36 @@ int main()
 
 				break;
 			case PLAYING:
+				// Check winner status
+				if (game.CheckWinner() == PLAYER) std::cout << "player won";
+				else if (game.CheckWinner() == DEALER) std::cout << "CPU dealer won";
+				
 				// display Hit && Stand buttons
+				DrawTexture(hit, SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3, WHITE);
+				DrawTexture(stand, SCREEN_WIDTH / 2 , SCREEN_HEIGHT / 3, WHITE);
+				
+				// if mouse is hovering over the HIT button
+				if (CheckCollisionPointRec(mouseCursorPoint, hitBounds))
+				{
+					// if mouse is clicking HIT button
+					if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+					{
+						std::cout << "CLICKING HIT BUTTON\n";
+						player.Hit();
+					}
+				}
+
+				// if mouse is hovering over the Stand button
+				if (CheckCollisionPointRec(mouseCursorPoint, standBounds))
+				{
+					// if mouse is clicking Stand button
+					if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+					{
+						std::cout << "CLICKING STAND BUTTON\n";
+						player.Stand();
+					}
+				}
+
 				break;
 			case END:
 				//display play again button and statistics buttons

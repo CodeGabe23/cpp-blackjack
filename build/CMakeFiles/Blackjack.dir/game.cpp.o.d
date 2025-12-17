@@ -2,6 +2,7 @@ CMakeFiles/Blackjack.dir/game.cpp.o: \
  /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/game.cpp \
  /usr/include/stdc-predef.h \
  /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/game.hpp \
+ /home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/src/player.hpp \
  /usr/include/c++/15.2.1/iostream \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -146,4 +147,4 @@ CMakeFiles/Blackjack.dir/game.cpp.o: \
  /usr/include/c++/15.2.1/bits/locale_facets.tcc \
  /usr/include/c++/15.2.1/bits/basic_ios.tcc \
  /usr/include/c++/15.2.1/bits/ostream.tcc /usr/include/c++/15.2.1/istream \
- /usr/include/c++/15.2.1/bits/istream.tcc
+ /usr/include/c++/15.2.1/bits/istream.tcc /usr/include/raylib.h
