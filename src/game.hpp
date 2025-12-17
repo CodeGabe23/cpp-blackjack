@@ -1,5 +1,5 @@
 #pragma once
-enum Winner {Player, Dealer};
+enum Winner {PLAYER, DEALER};
 
 class Game
 {

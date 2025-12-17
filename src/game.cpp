@@ -9,7 +9,7 @@ Game::Game()
 Winner Game::CheckWinner()
 {
 	std::cout << "Checking winner\n";
-	return Winner::Dealer;
+	return Winner::DEALER;
 }
 
 void Game::Deal()
