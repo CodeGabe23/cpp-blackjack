@@ -3,7 +3,7 @@
 
 Game::Game()
 {
-	std::cout << "init game\n";
+ 	std::cout << "init game\n";
 }
 
 Winner Game::CheckWinner()
