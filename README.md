@@ -2,7 +2,7 @@
 
 Still in development.
 
-My version of blackjack in c++
+My version of blackjack WITH GUI using Raylib in c++
 
 **How To Build**
 
