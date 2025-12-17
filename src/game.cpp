@@ -12,6 +12,8 @@ Winner Game::CheckWinner()
 	return Winner::DEALER;
 }
 
+GameState Game::CheckGameState() {return gameState;}
+
 void Game::Deal()
 {
  std::cout << "dealing\n";
