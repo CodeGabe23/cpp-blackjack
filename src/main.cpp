@@ -38,10 +38,10 @@ int main()
 		//Draw Players Cash
 		DrawText(TextFormat("Cash: $%d", player.GetCash()), 50, 50, 42, GOLD);
 		//Draw Dealer stats (current number)
-		
+		DrawText(TextFormat("Dealer Cards: %d", game.GetDealerTotalCards()), SCREEN_WIDTH - 250, 50, 28, YELLOW);
+
 		//Draw Player stats (current number and bet)
 		DrawText(TextFormat("Player Cards: %d", player.GetTotalCards()), SCREEN_WIDTH - 250, SCREEN_HEIGHT - 100, 28, YELLOW);
-
 		//Check gamestate
 		//check where mouse cursor is
 		Vector2 mouseCursorPoint = GetMousePosition();
@@ -79,7 +79,7 @@ int main()
 				if (CheckCollisionPointRec(mouseCursorPoint, hitBounds))
 				{
 					// if mouse is clicking HIT button
-					if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+					if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 					{
 						std::cout << "CLICKING HIT BUTTON\n";
 						player.Hit();
@@ -90,16 +90,39 @@ int main()
 				if (CheckCollisionPointRec(mouseCursorPoint, standBounds))
 				{
 					// if mouse is clicking Stand button
-					if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+					if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 					{
 						std::cout << "CLICKING STAND BUTTON\n";
 						player.Stand();
 					}
 				}
 
+				//check player total card value
+				if (player.GetTotalCards() > 21)
+				{
+					// set game enum winner to dealer
+					game.SetWinner(DEALER);
+					game.SetGameState(END);
+				}
+				else if (player.GetTotalCards() == 21)
+				{
+					DrawText("You got Blackjack!", SCREEN_WIDTH / 2 - 100, 300, 50, YELLOW);
+				}
+
 				break;
 			case END:
 				//display play again button and statistics buttons
+				std::cout << "its the end of the game\n";
+				if (game.CheckWinner() == PLAYER)
+				{	
+					DrawText("YOU LOST!", SCREEN_WIDTH / 2 - 100, 300, 50, RED);
+				}
+				else 
+				{
+					DrawText("YOU WON!", SCREEN_WIDTH / 2 - 100, 300, 50, GREEN);
+				}
+				DrawTexture(play_again, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 - 50, WHITE);
+
 				break;
 			default:
 				std::cout << "ERROR: game state checking failed";

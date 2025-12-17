@@ -14,8 +14,13 @@ public:
 	void Deal();
 
 	Winner CheckWinner();
+	
+	void SetWinner(Winner val);
 
 	GameState CheckGameState();
+
+	void SetGameState(GameState gs);
+
 private:
 	Winner winner{NONE};
 	GameState gameState{START};
