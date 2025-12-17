@@ -23,6 +23,9 @@ int main()
 	Texture2D play_again = LoadTexture("images/play_again.png");
 	Texture2D stand = LoadTexture("images/stand.png");
 
+	// for rectangle button bounds
+	Rectangle dealBounds = {SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 2, 161, 47};
+	
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
@@ -36,11 +39,26 @@ int main()
 		//Draw Player stats (current number and bet)
 
 		//Check gamestate
+		//check where mouse cursor is
+		Vector2 mouseCursorPoint = GetMousePosition();
+
 		switch (game.CheckGameState())
 		{
 			case START:
 				//display DEAL button
-				DrawTexture(deal, SCREEN_WIDTH / 3, SCREEN_HEIGHT / 2, WHITE);
+				DrawTexture(deal, SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 2, WHITE);
+				
+				// if mouse is hovering over the deal button
+				if (CheckCollisionPointRec(mouseCursorPoint, dealBounds))
+				{
+					// if mouse is clicking deal button
+					if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+					{
+						std::cout << "CLICKING DEAL BUTTON\n";
+					}
+				}
+				// check if the user click the texture
+					
 
 				break;
 			case PLAYING:
