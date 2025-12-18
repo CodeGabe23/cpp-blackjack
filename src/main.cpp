@@ -24,9 +24,10 @@ int main()
 	Texture2D stand = LoadTexture("images/stand.png");
 
 	// for rectangle button bounds
-	Rectangle dealBounds = {SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 2, 161, 47};
-	Rectangle hitBounds = {SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3, 165, 55};
-	Rectangle standBounds = {SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3,167, 53};
+	Rectangle dealBounds = {SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 2,			161, 47};
+	Rectangle hitBounds = {SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3,			165, 55};
+	Rectangle standBounds = {SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3,				167, 53};
+	Rectangle playAgainBounds = {SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 - 50,207, 50};
 
 	SetTargetFPS(60);
 	while (!WindowShouldClose())
@@ -106,22 +107,42 @@ int main()
 				}
 				else if (player.GetTotalCards() == 21)
 				{
-					DrawText("You got Blackjack!", SCREEN_WIDTH / 2 - 100, 300, 50, YELLOW);
+					DrawText("You got Blackjack!", SCREEN_WIDTH / 2 - 200, 300, 50, YELLOW);
 				}
 
 				break;
 			case END:
 				//display play again button and statistics buttons
 				std::cout << "its the end of the game\n";
-				if (game.CheckWinner() == PLAYER)
+				if (game.CheckWinner() == DEALER)
 				{	
 					DrawText("YOU LOST!", SCREEN_WIDTH / 2 - 100, 300, 50, RED);
 				}
-				else 
+				else if (game.CheckWinner() == PLAYER) 
 				{
 					DrawText("YOU WON!", SCREEN_WIDTH / 2 - 100, 300, 50, GREEN);
 				}
+				else 
+				{
+					DrawText("ITS A DRAW!", SCREEN_WIDTH / 2 - 100, 300, 50, BLACK);
+				}
 				DrawTexture(play_again, SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 - 50, WHITE);
+
+				// check if user wants to play again by pressing the play again button
+				if (CheckCollisionPointRec(mouseCursorPoint, playAgainBounds))
+				{
+					// if mouse is clicking Stand button
+					if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+					{
+						std::cout << "CLICKING PLAY AGAIN BUTTON\n";
+						//game.PlayAgain(); THIS METHOD IS USELESS CURRENTLY
+						game.SetGameState(START);
+						player.SetTotalCards(0);
+						game.SetWinner(NONE);
+						std::cout << "\n\nGame State: " << game.CheckGameState();
+					}
+				}	
+
 
 				break;
 			default:

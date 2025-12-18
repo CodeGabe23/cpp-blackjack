@@ -7,6 +7,8 @@ class Game
 public:
 	Game();
 
+	void PlayAgain();
+
 	int GetDealerTotalCards();
 
 	void SetDealerTotalCards();
@@ -27,5 +29,6 @@ private:
 
 // Dealer data will be set here
 	int dealerTotalCards {};
+
 
 };

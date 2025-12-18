@@ -8,7 +8,23 @@ Game::Game()
 	// not working yet
 	// need to reset all values to default
  	std::cout << "init game\n";
-	
+	Winner winner = NONE;
+	GameState gameState = START;
+
+	int dealerTotalCards = 0;
+
+
+}
+
+void Game::PlayAgain()
+{
+	// not working yet
+	// need to reset all values to default
+ 	std::cout << "Playing again\n";
+
+	Winner winner = NONE;
+	GameState gameState = START;
+	int dealerTotalCards = 0;
 }
 
 int Game::GetDealerTotalCards()
