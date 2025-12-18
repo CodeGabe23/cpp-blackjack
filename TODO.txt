@@ -1,4 +1,2 @@
 Things left to do:
-1. Add funcitonaltiy to the "stand" button
-2. give the dealer his cards when its his turn
-3. allow the user to bet using their cash balance
+- Add betting functionality to allow user to use their cash balance

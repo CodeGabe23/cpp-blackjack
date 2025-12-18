@@ -12,6 +12,9 @@ int Player::GetCash()
 	return cash;
 }
 
+//
+// TODO: ADD BETTING FUNCTIONALITY WITH USER's CASH
+//
  
 int Player::GetTotalCards()
 {
