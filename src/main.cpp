@@ -72,10 +72,16 @@ int main()
 				if (game.CheckWinner() == PLAYER) std::cout << "player won";
 				else if (game.CheckWinner() == DEALER) std::cout << "CPU dealer won";
 				
-				// display Hit && Stand buttons
-				DrawTexture(hit, SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3, WHITE);
-				DrawTexture(stand, SCREEN_WIDTH / 2 , SCREEN_HEIGHT / 3, WHITE);
-				
+
+
+
+
+				if (game.CanPlayerChoose())
+				{
+					// display Hit && Stand buttons
+					DrawTexture(hit, SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3, WHITE);
+					DrawTexture(stand, SCREEN_WIDTH / 2 , SCREEN_HEIGHT / 3, WHITE);
+				}
 				// if mouse is hovering over the HIT button
 				if (CheckCollisionPointRec(mouseCursorPoint, hitBounds))
 				{
@@ -94,11 +100,35 @@ int main()
 					if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 					{
 						std::cout << "CLICKING STAND BUTTON\n";
-						player.Stand();
+						game.Stand();
+
+						// Check who won 
+						// game.CheckWinner(); TODO: doesnt work yet as I need to get a ref to the player instance	
+						if (player.GetTotalCards() == game.GetDealerTotalCards())
+						{
+							game.SetWinner(NONE);
+							game.SetGameState(END);
+						}
+						else if (player.GetTotalCards() > game.GetDealerTotalCards())
+						{
+							game.SetWinner(PLAYER);
+							game.SetGameState(END);
+						}
+						else 
+						{
+							game.SetWinner(DEALER);
+							game.SetGameState(END);
+						}
+
+						if (game.GetDealerTotalCards() > 21)
+						{
+							game.SetWinner(PLAYER);
+							game.SetGameState(END);
+						}
 					}
 				}
 
-				//check player total card value
+				// check player total card value
 				if (player.GetTotalCards() > 21)
 				{
 					// set game enum winner to dealer
@@ -138,7 +168,9 @@ int main()
 						//game.PlayAgain(); THIS METHOD IS USELESS CURRENTLY
 						game.SetGameState(START);
 						player.SetTotalCards(0);
+						game.SetDealerTotalCards(0);
 						game.SetWinner(NONE);
+						game.SetPlayerChoosing(true);		
 						std::cout << "\n\nGame State: " << game.CheckGameState();
 					}
 				}	

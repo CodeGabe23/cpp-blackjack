@@ -28,9 +28,4 @@ void Player::Hit()
 	totalCards += GetRandomValue(1,11);
 }
 
-void Player::Stand()
-{
-
-}
-
 	

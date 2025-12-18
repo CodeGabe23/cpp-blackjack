@@ -11,9 +11,11 @@ public:
 
 	int GetDealerTotalCards();
 
-	void SetDealerTotalCards();
+	void SetDealerTotalCards(int newTotalCards);
 
 	void Deal();
+	
+	void Stand();
 
 	Winner CheckWinner();
 	
@@ -23,6 +25,10 @@ public:
 
 	void SetGameState(GameState gs);
 
+	bool CanPlayerChoose();
+
+	void SetPlayerChoosing(bool b);
+
 private:
 	Winner winner{NONE};
 	GameState gameState{START};
@@ -30,5 +36,6 @@ private:
 // Dealer data will be set here
 	int dealerTotalCards {};
 
+	bool canChoose = true; // this says if the player can hit or stand (e.g. if its the dealers turn)
 
 };
