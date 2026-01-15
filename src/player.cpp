@@ -18,6 +18,12 @@ void Player::SetCash(int newCash)
 	cash = newCash;
 }
 
+void Player::AddPotToBalance()
+{
+	cash += (pot * 2);
+	pot = 0;
+}
+
 void Player::Bet()
 {
 	cash -= 10;

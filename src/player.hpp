@@ -7,7 +7,9 @@ public:
 	int GetCash();
 
 	void SetCash(int newCash);
-	
+
+	void AddPotToBalance();
+
 	void Bet();
 
 	int GetTotalCards();

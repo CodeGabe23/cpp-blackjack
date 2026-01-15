@@ -12,6 +12,8 @@ int main()
 	constexpr int SCREEN_WIDTH {850};
 	constexpr int SCREEN_HEIGHT {531};
 
+	bool hasPayedOutPot = false;
+
 	InitWindow(850,531, "C++ Blackjack");
 
 	// textures/images
@@ -52,6 +54,8 @@ int main()
 		switch (game.CheckGameState())
 		{
 			case START:
+				//reset ability to receive money from $ pot;
+				hasPayedOutPot = false;
 				//display DEAL button
 				DrawTexture(deal, SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 2, WHITE);
 				
@@ -170,6 +174,11 @@ int main()
 				{
 					DrawText("YOU WON!", SCREEN_WIDTH / 2 - 100, 300, 50, GREEN);
 					// TODO: set the player's cash to whats in the pot x2
+					if (!hasPayedOutPot)
+					{		
+						player.AddPotToBalance();
+						hasPayedOutPot = true;
+					}
 				}
 				else 
 				{
