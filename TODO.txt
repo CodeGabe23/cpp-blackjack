@@ -1,2 +1,5 @@
 Things left to do:
-- Add betting functionality to allow user to use their cash balance
+- make a boolean to check if they have bet anything,
+- add a pot which stores the total money betted
+- if player wins, they earn that money back x2
+- if player loses, they just lose what they bet;

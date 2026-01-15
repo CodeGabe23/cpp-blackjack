@@ -6,7 +6,9 @@ public:
 
 	int GetCash();
 
-	void SetCash();
+	void SetCash(int newCash);
+	
+	void Bet();
 
 	int GetTotalCards();
 
@@ -18,5 +20,7 @@ public:
 private:
 	int cash{100};
 	int totalCards{}; // this is the value of the cards totaled up
-	bool canChoose = true; // this says if the player can hit or stand (e.g. if its the dealers turn)
+	int pot{};
+	bool hasBet = false;
+
 };

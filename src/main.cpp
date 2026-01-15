@@ -57,7 +57,7 @@ int main()
 				
 				// if mouse is hovering over the deal button
 				if (CheckCollisionPointRec(mouseCursorPoint, dealBounds))
-				{
+				{ 
 					// if mouse is clicking deal button
 					if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 					{
@@ -80,10 +80,25 @@ int main()
 
 				if (game.CanPlayerChoose())
 				{
-					// display Hit && Stand buttons
+					// display Hit && Stand && Bet $10 buttons
 					DrawTexture(hit, SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3, WHITE);
 					DrawTexture(stand, SCREEN_WIDTH / 2 , SCREEN_HEIGHT / 3, WHITE);
+					DrawTexture(bet10, SCREEN_WIDTH / 2 - 150, SCREEN_HEIGHT / 2, WHITE);
+					
 				}
+
+				// checking if user wants to bet $10
+				if (CheckCollisionPointRec(mouseCursorPoint, bet10Bounds))
+				{
+					//if mouse is clicking Bet $10
+					if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+					{
+						std::cout << "Betting $10\n";
+						player.Bet();
+						
+					}
+				}
+
 				// if mouse is hovering over the HIT button
 				if (CheckCollisionPointRec(mouseCursorPoint, hitBounds))
 				{
@@ -149,10 +164,12 @@ int main()
 				if (game.CheckWinner() == DEALER)
 				{	
 					DrawText("YOU LOST!", SCREEN_WIDTH / 2 - 100, 300, 50, RED);
+
 				}
 				else if (game.CheckWinner() == PLAYER) 
 				{
 					DrawText("YOU WON!", SCREEN_WIDTH / 2 - 100, 300, 50, GREEN);
+					// TODO: set the player's cash to whats in the pot x2
 				}
 				else 
 				{
