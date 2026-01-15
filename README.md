@@ -1,6 +1,6 @@
 # cpp-blackjack
 
-Still in development.
+Project Finished!
 
 My version of blackjack WITH GUI using Raylib in c++
 
