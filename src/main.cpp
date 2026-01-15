@@ -17,17 +17,19 @@ int main()
 	// textures/images
 	// NOTE: textures must be loaded after window init 
 	// cuz OpenGL context is requried
-	Texture2D bg = LoadTexture("images/bg.jpg");
-	Texture2D deal = LoadTexture("images/deal.png");
-	Texture2D hit = LoadTexture("images/hit.png");
-	Texture2D play_again = LoadTexture("images/play_again.png");
-	Texture2D stand = LoadTexture("images/stand.png");
+	Texture2D bg		= LoadTexture("images/bg.jpg");
+	Texture2D deal		= LoadTexture("images/deal.png");
+	Texture2D hit		= LoadTexture("images/hit.png");
+	Texture2D play_again= LoadTexture("images/play_again.png");
+	Texture2D stand		=LoadTexture("images/stand.png");
+	Texture2D bet10		= LoadTexture("images/bet10.png");
 
 	// for rectangle button bounds
-	Rectangle dealBounds = {SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT / 2,			161, 47};
-	Rectangle hitBounds = {SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3,			165, 55};
-	Rectangle standBounds = {SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3,				167, 53};
-	Rectangle playAgainBounds = {SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 - 50,207, 50};
+	Rectangle dealBounds		= {SCREEN_WIDTH / 3 + 50, SCREEN_HEIGHT  / 2,			161, 47};
+	Rectangle hitBounds			= {SCREEN_WIDTH / 2 - 300, SCREEN_HEIGHT / 3,			165, 55};
+	Rectangle standBounds		= {SCREEN_WIDTH / 2,		SCREEN_HEIGHT/ 3,			167, 53};
+	Rectangle playAgainBounds	= {SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 - 50,207, 50};
+	Rectangle bet10Bounds		= {SCREEN_WIDTH / 3 + 30, SCREEN_HEIGHT  / 2, 161, 47};
 
 	SetTargetFPS(60);
 	while (!WindowShouldClose())

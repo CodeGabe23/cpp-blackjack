@@ -81,7 +81,7 @@ void Game::Stand()
 	SetDealerTotalCards(GetDealerTotalCards() + GetRandomValue(1,11));
 	SetDealerTotalCards(GetDealerTotalCards() + GetRandomValue(1,11));
 	SetDealerTotalCards(GetDealerTotalCards() + GetRandomValue(1,11));	
-	SetDealerTotalCards(GetDealerTotalCards() + GetRandomValue(1,11));	
+	//SetDealerTotalCards(GetDealerTotalCards() + GetRandomValue(1,11));	
 
 	canChoose =	false; // this says if the player can hit or stand (e.g. if its the dealers turn)
 }
