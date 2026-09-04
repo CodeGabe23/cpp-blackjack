@@ -2,11 +2,15 @@
 
 Project Finished!
 
-My version of blackjack WITH GUI using Raylib in c++
+My version of blackjack with GUI using Raylib in c++
 
-**How To Build**
+**How To Build (Linux)**
 
-in top level directory run:
-`cmake --build ./build`
-then
-./build/Blackjack
+cd to ./build directory and run:
+1) `cmake ..`
+
+2) `make`
+
+3) move the executable file 'Blackjack' into root directory so it can access the assets. `mv Blackjack ../`
+
+4) Lastly, cd to root dir `../` and run `./Blackjack` to play.

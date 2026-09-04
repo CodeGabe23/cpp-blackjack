@@ -1,3 +1,0 @@
-/home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/build/CMakeFiles/Blackjack.dir
-/home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/build/CMakeFiles/edit_cache.dir
-/home/gabriel/Desktop/cppProjects/raylib/cpp-blackjack/build/CMakeFiles/rebuild_cache.dir
